@@ -13,9 +13,23 @@ public class User {
 	private String phone;
 	private String passwd;
 	private Role role;
+	private String newPassword;
 	
 	public User() {
 	System.out.println("inside user ctor");	
+	}
+	
+	public User(String Email,String Password)
+	{
+		this.email=Email;
+		this.passwd=Password;
+	}
+	
+	public User(String Email,String Password,String newPassword)
+	{
+		this.email=Email;
+		this.passwd=Password;
+		this.newPassword =newPassword;
 	}
 	
 	public User( String name, String email, String phone, String passwd, Role role) {
@@ -76,6 +90,16 @@ public class User {
 		this.role = role;
 	}
 	
+	
+	@Transient
+	public String getNewPassword() {
+		return newPassword;
+	}
+
+	public void setNewPassword(String newPassword) {
+		this.newPassword = newPassword;
+	}
+
 	@Override
 	public String toString() {
 		return getClass().getName() + " [id=" + id + ", name=" + name + ", email=" + email + ", phone=" + phone + ", passwd=" + passwd + "]";

@@ -21,7 +21,7 @@ public class UserDaoImp implements IuserDao
 	@Override
 	public User validateUser(String email, String password) {
 		String jpql = "select u from User u where u.email=:email and u.passwd=:password";
-		return (User) sf.getCurrentSession().createQuery(jpql).setParameter("email", email).setParameter("password", password).getSingleResult();
+		return (User)sf.getCurrentSession().createQuery(jpql).setParameter("email", email).setParameter("password", password).getSingleResult();
 	}
 
 	@Override
